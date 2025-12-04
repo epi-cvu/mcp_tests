@@ -11,9 +11,8 @@ from mcp.server import Server
 from mcp.types import Tool, TextContent, ImageContent, EmbeddedResource
 
 from modules.voozanoo import import_csv_folder, import_json_file
-
+from modules.metadata import xml_to_metadata, sql_to_metadata, csv_to_metadata
 app = Server("sdv-converter")
-
 
 @app.list_tools()
 async def list_tools() -> list[Tool]:
@@ -129,34 +128,21 @@ async def convert_to_sdv(arguments: dict) -> list[TextContent]:
             )
     
     try:
-        
-        # Appeler votre module de conversion approprié
         if input_type == "voozanoo4":
-            # from votre_package import convertir_voozanoo4
-            # metadata = convertir_voozanoo4(input_path)
             metadata, dico = import_json_file(input_path)
         
         elif input_type == "voozanoo3":
-            # from votre_package import convertir_voozanoo3
-            # metadata = convertir_voozanoo3(input_path)
             metadata, dico = import_csv_folder(input_path)
         
-        # elif input_type == "xml":
-        #     # from votre_package import convertir_xml
-        #     # metadata = convertir_xml(input_path)
-        #     metadata = {"example": "Remplacez par votre fonction"}
+        elif input_type == "xml":
+            metadata = xml_to_metadata(input_path)
         
-        # elif input_type == "sql":
-        #     # from votre_package import convertir_sql
-        #     # metadata = convertir_sql(input_path)
-        #     metadata = {"example": "Remplacez par votre fonction"}
+        elif input_type == "sql":
+            metadata = sql_to_metadata(input_path)
         
-        # elif input_type == "csv":
-        #     # from votre_package import convertir_csv
-        #     # metadata = convertir_csv(input_path)
-        #     metadata = {"example": "Remplacez par votre fonction"}
+        elif input_type == "csv":
+            metadata = csv_to_metadata(input_path)
         
-        # Sauvegarder le metadata.json
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, indent=2, ensure_ascii=False)
         
