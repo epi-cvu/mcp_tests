@@ -9,7 +9,7 @@ mcp = FastMCP("schema-enrichment")
 
 
 @mcp.tool()
-async def add_commentary(
+async def add_column_description(
     input_path: str,
     context: str,
     output_path: str = None,
