@@ -1,0 +1,16 @@
+[project]
+name = "fitnet-mcp"
+version = "0.1.0"
+description = "serveur MCP qui permet de mapper les événements Google Calendar à des projets/affaires Fitnets."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "google-api-python-client>=2.187.0",
+    "google-auth-httplib2>=0.3.0",
+    "google-auth-oauthlib>=1.2.3",
+    "httpx>=0.28.1",
+    "lxml>=6.0.2",
+    "mcp[cli]>=1.24.0",
+    "pandas>=2.3.3",
+    "xlrd>=2.0.2",
+]
