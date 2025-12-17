@@ -1,0 +1,1 @@
+For the credentials.json file please ask Charles or Eddy. 
