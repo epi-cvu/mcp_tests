@@ -88,7 +88,7 @@ async def map_calendar_to_projects(
             f"Pour chaque événement du calendrier, tu dois déterminer quel projet Fitnet correspond le mieux.\n\n"
             f"Règles importantes:\n"
             f"1. Si tu ne sais pas où mapper l'événement ou s'il s'agit d'activité générales, mappe le vers TNA.\n"
-            f"2. Pour ce qui est du temps Epiconcept, cela concerne : cela concerne principalement les réunions staff réunions staff.\n"
+            f"2. Pour ce qui est du temps Epiconcept, cela concerne : cela concerne principalement les réunions staff.\n"
             f"3. Tout ce qui est en rapport avec Neha/NEHA ou SDV appartient à DOFI/ Données fictives.\n\n"
             f"Répond UNIQUEMENT avec un JSON valide (sans markdown, sans preamble) au format :\n"
             f"{{'day': {{'event_name': 'projet_fitnet_correspondant', 'temps' : 'temps_inscrit', 'total_journee': 'temps_total_journee'}}}}\n\n"

@@ -14,4 +14,47 @@ L'import reste à la charge de l'équipe pour laquel les données ont été tran
 Cette méthodologie suit une sorte de workflow ETL qui ajoute l'IA pour le mapping. 
 
 ## L'enrichissment des schémas.
-Après l'unification des structures des bases de données
+Après l'unification des structures des bases de données, pour le mapping, il est important d'ajouter du contexte. Pour répondre à cette problématique, nous allons utiliser l'IA afin d'ajouter ce contexte. 
+
+Nous allons utiliser l'IA afin d'ajouter une descriptions pour chaque colonnes puis nous pourrons par la suite décider de valider ou non cette description. Pour ajouter une description précise, l'IA a quand même besoin d'un contexte général. 
+
+## Requirements
+Pour les requirements il faut installer tous les packages Python du fichier ```requirements.txt```. 
+
+Avec uv il faut simplement activer l'environnement virtuel python que vous avez généré et ensuite lancer la commande:
+```
+uv pip install -r requirements.txt
+```
+
+## ```schema_enrichment.py```
+Dans le fichier de configuration des serveurs mcp il faut indiquer le chemin absolu vers le dossier en question pour que cela fonctionne.
+Le fichier ```schema_enrichment.py``` est la nouvelle version de ```schema_enrichment.py``` avec une simplification des tools et de la documentation. 
+Voici un exemple du fichier de configuration 
+```json
+{
+    "mcpServers": {
+        "weather": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "C:\\Users\\Charles VU\\Documents\\GitHub\\mcp_tests\\schema_enrichment",
+                "run",
+                "schema_enrichment.py"
+            ]
+        }
+    }
+}
+```
+
+## Prompt
+De la même manière que ```standardize_schema``` il faut autoriser le connecteur **Filesystem**. 
+
+Il y a 3 choses à indiquer :
+- Le chemin vers le fichier metadata.json qui vient d'être standardisé
+- Le contexte de la base de données
+- La langue de la descriptions (Fr ou En)
+
+Supposons que nous avons un fichier de structure SQL d'une application pour le cancer du sein. Chez Epiconcept c'est ESIS-DOCS. Nous avons un fichier ```docs_metadata.json``` qui a été standardisé le prompt est alors ; 
+
+> J'aimerai que tu me décrives les colonnes de ce metadata //Chemin absolu vers mon fichier//docs_metadata.json en français. Cette base de données concerne le dépistage du cancer du sein. 
+> 
