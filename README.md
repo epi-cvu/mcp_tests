@@ -19,8 +19,9 @@ De mon côté, j'utilise Claude Desktop pour utiliser et tester mes fonctionnali
 ## Présentation des différents projets
 En fonction des projets, il faut mettre en place des venv Python différents et installer des packages différents. Cependant pour tous les venv, il faut installer ```mcp[cli]``` comme la documentation nous l'indique.
 
-### Projet ```weather```
-Le projet weather est le premier projet proposé par la documentation afin de comprendre le fonctionnement et comment développer un serveur MCP. Il n'est pas spécialement intéressant car il est identique à celui de la documentation. 
+### Projet ```weather``` & ```my_first_mcp_server```
+Le projet weather est le premier projet proposé par la documentation afin de comprendre le fonctionnement et comment développer un serveur MCP. Il n'est pas spécialement intéressant car il est identique à celui de la documentation.
+
 
 ### Projet ```standardize_schema```
 Dans ce projet se trouve la première étape de la méthodologie de reprise/migration de données. C'est la standardisation des fichiers de structures des bases de données **sources** et **cibles**. 
