@@ -62,3 +62,6 @@ Vous allez pouvoir utiliser ce prompt :
 > Salut je voudrais que tu me mappes mes événements google calendar de la semaine dernière aux affaires Fitnet de ce fichier : "//Chemin absolu vers le fichier//PageactivitesByCollaborateurCrossDataXLS.xls"
 
 Vous allez pouvoir demander par la suite les corrections ou valider le mapping.
+
+## Chantier en cours
+temp_new_fitnet_helper.py est la nouvelle version du fitnet_helper qui va demander une validation auprès de vous les différents mapping et il va les garder en mémoire. C'est encore en phase de test.

@@ -113,7 +113,7 @@ def retrieve_data(output=None):
     
         if output == None:
             print(json.dumps(week_hours, indent=4, ensure_ascii=False))
-            return json.dumps(week_hours, indent=4, ensure_ascii=False)
+            return week_hours
         else:
             if os.path.isdir(output):
                 output_path = os.path.join(output, "output.json")
