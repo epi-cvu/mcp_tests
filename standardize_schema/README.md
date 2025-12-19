@@ -58,7 +58,7 @@ Voici un exemple du fichier de configuration
 }
 ```
 ## Prompt
-Pour utiliser le prompt il faut aussi autoriser sur Claude Desktop le connecteur **Filesystem** dans mon cas, je ne l'ai autorisé à accéder seulement mon dossier **Bureau**.
+Pour utiliser le prompt il faut aussi autoriser sur Claude Desktop le connecteur **Filesystem** dans mon cas, je ne l'ai autorisé à accéder seulement mon dossier **Bureau/easy_access/tests_mcp**.
 
 Il faut obligatoirement indiquer le chemin absolu vers le fichier d'entrée en question mais il n'est pas nécessaire d'indiquer quel est son type de fichier. 
 Le fichier standardisé sera automatiquement enregistrer dans le dossier dans lequel vous avez indiqué le fichier source. Vous pouvez aussi lui indiquer le nom mais par défaut ce sera ```metadata.json```
